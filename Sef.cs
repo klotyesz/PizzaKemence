@@ -23,7 +23,8 @@ namespace PizzaKemence
                 Thread.Sleep(2000);
                 string nev = nevek[r.Next(0, nevek.Length)];
                 int meret = r.Next(16, 48);
-                Pizza feladat = new Pizza(nev, meret);
+                int ar = r.Next(2000, 15000);
+                Pizza feladat = new Pizza(nev, meret, ar);
 
                 kemence.Hozzaad(feladat);
                 Console.WriteLine($"A séf leadta az alábbi piizát: {feladat}");

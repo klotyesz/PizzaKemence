@@ -9,9 +9,10 @@ namespace PizzaKemence
     internal class Futar
     {
         private Kemence kemence;
-        public Futar(Kemence nyomtato)
+        int bevetel = 0;
+        public Futar(Kemence kemence)
         {
-            this.kemence = nyomtato;
+            this.kemence = kemence;
         }
 
         public void Futtat()
@@ -20,7 +21,8 @@ namespace PizzaKemence
             {
                 Thread.Sleep(3000);
                 Pizza feladat = kemence.Kivesz();
-                Console.WriteLine($"Kiszállítva: {feladat}");
+                bevetel += feladat.Ar;
+                Console.WriteLine($"Kiszállítva: {feladat} Bevétel: {bevetel}");
             }
         }
     }
